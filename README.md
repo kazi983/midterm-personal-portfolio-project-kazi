@@ -88,7 +88,7 @@ Marks will be awarded based on the following:
 
 ## Presentation
 
-- Presentations will be held on March 6th during class time.
+- Presentations will be held on July 10th during class time.
 - Your presentation should be roughly 10 minutes or less, but absolutely no longer than 12 minutes. (Q&A is considered additional time and does not count towards your limit).
 - You may include in your presentation what inspired you, the main challenges you faced, and how you overcame them.
 
