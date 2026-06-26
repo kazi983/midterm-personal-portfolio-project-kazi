@@ -1,58 +1,37 @@
+:root {
+  --background: rgb(33, 33, 33);
+  --foreground: rgb(222, 222, 222);
+  --muted-foreground: rgb(181, 181, 181);
+  --font-roboto-flex: 'Roboto Flex', 'Roboto Flex Fallback';
+  --font-anton: 'Anton', 'Anton Fallback';
+  /* --primary-color: rgb(168, 229, 36); */
+  --primary-color: rgb(0, 240, 80);
+  --primary-foreground: rgb(33, 33, 33);
+  --spacing: 0.25rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+a {
+  color: inherit;
+  text-decoration: none;
+}
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-roboto-flex);
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: var(--background);
+  color: var(--foreground);
   padding: 20px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-}
-.navbar .icon img {
-  height: 40px;
-  width: 40px;
-  filter: invert(100%);
-}
-.navbar .buttons button {
-  background: none;
-  border: none;
-  color: #fff;
-  margin-left: 20px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 16px;
-}
-.navbar .buttons button:hover {
-  background-color: #575757;
-  border-radius: 5px;
 }
 
 main {
   margin-top: 20px;
   padding: 20px;
-  background: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-main h1 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-main p {
-  font-size: 16px;
-  color: #555;
 }
 
 @media (max-width: 600px) {
@@ -76,3 +55,161 @@ main p {
     font-size: 14px;
   }
 }
+/* ここからオリジナル */
+
+main {
+  background-color: black;
+}
+/* ===================== */
+/* Background            */
+/* ===================== */
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+/* ===================== */
+/* Text property         */
+/* ===================== */
+.text-primary {
+  color: var(--primary-color);
+}
+.text-primary-foreground {
+  color: var(--primary-foreground);
+}
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+.leading-\[\.95\] {
+  line-height: 0.95;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-anton {
+  font-family: var(--font-anton);
+}
+
+/* ===================== */
+/* Sizing                */
+/* ===================== */
+.max-w-\[544px\] {
+  max-width: 544px;
+}
+.h-12 {
+  height: calc(var(--spacing) * 12);
+}
+
+/* ===================== */
+/* Spacing               */
+/* ===================== */
+.mx-auto {
+  margin-inline: auto; /* works when the screen is over w-2000px */
+}
+.mt-6 {
+  margin-top: calc(var(--spacing) * 6);
+}
+.mt-9 {
+  margin-top: calc(var(--spacing) * 9);
+}
+.mb-1\.5 {
+  margin-bottom: calc(var(--spacing) * 1.5);
+}
+.ml-4 {
+  margin-left: calc(var(--spacing) * 4);
+}
+.px-4 {
+  padding-inline: calc(var(--spacing) * 4);
+}
+.px-8 {
+  padding-inline: calc(var(--spacing) * 8);
+}
+.pb-10 {
+  padding-bottom: calc(var(--spacing) * 10);
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+/* ===================== */
+/* Flex                  */
+/* ===================== */
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+
+.gap-8 {
+  gap: calc(var(--spacing) * 8);
+}
+
+@media not all and (min-width: 768px) {
+  .max-md\:grow {
+    flex-grow: 1;
+  }
+  .max-md\:flex {
+    display: flex;
+  }
+}
+
+/* ===================== */
+/* Animation             */
+/* ===================== */
+.bg-anim {
+  background: linear-gradient(120deg, #0643b5, #15151f, #8800ff);
+  background-size: 300% 300%;
+  animation: moveGradient 12s ease-in-out infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===================== */
+/* Animation             */
+/* ===================== */
