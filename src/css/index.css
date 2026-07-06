@@ -24,12 +24,6 @@ body {
   background-color: var(--background);
   color: var(--foreground);
 }
-h1 {
-  font-size: 3.75rem;
-  line-height: 1;
-  font-family: var(--font-anton);
-  text-transform: uppercase;
-}
 
 /* ===================== */
 /* Area            */
@@ -39,24 +33,30 @@ main {
   background-size: 300% 300%;
   animation: moveGradient 12s ease-in-out infinite;
 }
-
-.hero {
-  height: 100vh;
+section {
   padding-inline: calc(var(--spacing) * 4);
-  padding-bottom: calc(var(--spacing) * 10);
 
   display: flex;
   flex-direction: column;
+}
+.hero {
+  height: 100vh;
+  padding-bottom: calc(var(--spacing) * 10);
+
   justify-content: space-between;
   align-items: center;
 }
+.hero-content,
+about-content {
+  max-width: 544px;
+}
+
 .hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-grow: 1;
-  max-width: 544px;
 }
 .hero-stats {
   display: flex;
@@ -64,10 +64,32 @@ main {
   text-align: center;
   margin-top: calc(var(--spacing) * 9);
 }
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
 
 /* ===================== */
 /* Text                  */
 /* ===================== */
+h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-family: var(--font-anton);
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: inherit;
+}
+p {
+  color: var(--muted-foreground);
+}
+.text-primary {
+  color: var(--foreground);
+}
+
 .hero-title :nth-child(1) {
   color: var(--primary-color);
 }
@@ -79,16 +101,13 @@ main {
   margin-top: calc(var(--spacing) * 6);
   font-size: 1.125rem;
   line-height: 1.75rem;
-  color: var(--muted-foreground);
 }
-.hero-description strong {
-  color: var(--foreground);
-}
+
 .hero-availability {
   margin-top: calc(var(--spacing) * 3);
 }
 
-.hero-stats h2 {
+.hero-stat strong {
   margin-bottom: calc(var(--spacing) * 1.5);
 
   line-height: 2.5rem;
@@ -97,14 +116,11 @@ main {
   font-size: 2.25rem;
   letter-spacing: 0.1em;
 }
-.hero-stats p {
-  color: var(--muted-foreground);
-}
 
 /* ===================== */
 /* Button            */
 /* ===================== */
-.button--primary {
+.button {
   margin-top: calc(var(--spacing) * 9);
   padding-inline: calc(var(--spacing) * 8);
   height: calc(var(--spacing) * 12);
@@ -123,7 +139,7 @@ main {
 
   transition: background-color 0.2s ease;
 }
-.button--primary:hover {
+.button:hover {
   background-color: white;
 }
 
