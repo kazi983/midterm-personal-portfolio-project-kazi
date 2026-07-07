@@ -215,6 +215,25 @@ footer {
   font-family: var(--font-anton);
   font-size: var(--text-5xl);
   text-transform: uppercase;
+  color: var(--muted-foreground);
+  padding-bottom: var(--spacing-4);
+}
+.stack-items {
+  display: flex;
+  gap: var(--gap-m);
+  flex-wrap: wrap;
+}
+.stack-item {
+  color: var(--foreground);
+  font-size: var(--text-2xl);
+
+  display: flex;
+  align-items: center;
+  gap: var(--gap-s);
+}
+
+.stack-items:not(:last-child) {
+  padding-bottom: var(--spacing-12);
 }
 
 /* ===================== */
