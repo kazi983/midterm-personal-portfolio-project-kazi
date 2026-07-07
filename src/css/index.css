@@ -4,8 +4,8 @@
   --muted-foreground: rgb(181, 181, 181);
   --font-roboto-flex: 'Roboto Flex', 'Roboto Flex Fallback';
   --font-anton: 'Anton', 'Anton Fallback';
-  /* --primary-color: rgb(168, 229, 36); */
-  --primary-color: rgb(0, 240, 80);
+  --primary-color: rgb(100, 255, 218);
+  /* --primary-color: rgb(0, 240, 80); */
   --primary-foreground: rgb(33, 33, 33);
   --spacing: 0.25rem;
 }
@@ -13,44 +13,63 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1em;
+  font-weight: normal;
+  color: var(--muted-foreground);
 }
 a {
   color: inherit;
   text-decoration: none;
+}
+li {
+  list-style-type: none;
 }
 body {
   font-family: var(--font-roboto-flex);
   line-height: 1.6;
   background-color: var(--background);
   color: var(--foreground);
-}
-
-/* ===================== */
-/* Area            */
-/* ===================== */
-main {
   background: linear-gradient(120deg, #0643b5, #15151f, #8800ff);
   background-size: 300% 300%;
   animation: moveGradient 12s ease-in-out infinite;
 }
+
+/* ===================== */
+/* Area                  */
+/* ===================== */
 section {
   padding-inline: calc(var(--spacing) * 4);
 
   display: flex;
   flex-direction: column;
-}
-.hero {
-  height: 100vh;
-  padding-bottom: calc(var(--spacing) * 10);
 
+  animation: fadeIn linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+}
+.hero-inline,
+.about-inline,
+.stacks-inline,
+.project-inline {
+  max-width: 544px;
+  min-height: 100vh;
+}
+
+.about-title,
+.stacks-title,
+.experience-title,
+.project-title,
+.project-name {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.hero-inline {
+  padding-bottom: calc(var(--spacing) * 10);
   justify-content: space-between;
   align-items: center;
 }
-.hero-content,
-about-content {
-  max-width: 544px;
-}
-
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -69,18 +88,120 @@ about-content {
   flex-direction: column;
 }
 
+.about-inline {
+  margin-top: calc(var(--spacing) * 9);
+  padding-top: calc(var(--spacing) * 9);
+  padding-bottom: calc(var(--spacing) * 9);
+}
+.stacks-content {
+  padding-top: calc(var(--spacing) * 9);
+  padding-bottom: calc(var(--spacing) * 9);
+  color: var(--muted-foreground);
+}
+
+.experience-inline {
+  margin-top: calc(var(--spacing) * 9);
+  padding-top: calc(var(--spacing) * 9);
+  padding-bottom: calc(var(--spacing) * 9);
+}
+.experience-content {
+  padding-top: calc(var(--spacing) * 9);
+  padding-bottom: calc(var(--spacing) * 9);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-inline {
+  margin-top: calc(var(--spacing) * 9);
+  padding-top: calc(var(--spacing) * 9);
+  padding-bottom: calc(var(--spacing) * 9);
+}
+.project-content {
+  padding-top: calc(var(--spacing) * 9);
+  padding-bottom: calc(var(--spacing) * 9);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.project-info {
+  display: flex;
+  gap: 0.5rem;
+}
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.project-tech-list {
+  display: flex;
+  align-items: center;
+}
+.project-tech-list li:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(60, 60, 60);
+  margin-inline: 1rem;
+}
+
+.progressbar-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-height: 100px;
+}
+.progressbar-bar {
+  position: fixed;
+  top: 50vh;
+  right: 2%;
+  width: 0.375rem;
+  height: 100%;
+  background-color: #92c5fd;
+  animation: progressbar linear both;
+  animation-timeline: scroll();
+  animation-range: entry 0% cover 100%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+.footer-email {
+  font-family: var(--font-anton);
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
 /* ===================== */
 /* Text                  */
 /* ===================== */
 h1 {
   font-size: 3.75rem;
-  line-height: 1;
   font-family: var(--font-anton);
   text-transform: uppercase;
 }
 h2 {
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 1.25rem;
   font-weight: inherit;
 }
 p {
@@ -117,8 +238,108 @@ p {
   letter-spacing: 0.1em;
 }
 
+.about-title {
+  padding-bottom: calc(var(--spacing) * 2);
+  border-bottom: 1px solid rgb(61, 61, 61);
+}
+.about-content p {
+  margin-top: calc(var(--spacing) * 4);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.stacks-title,
+.experience-title,
+.project-title {
+  text-transform: uppercase;
+}
+
+.experience-content {
+  font-size: 1.2rem;
+}
+.experience-title {
+  color: var(--muted-foreground);
+  font-weight: normal;
+}
+.experience-position {
+  font-family: var(--font-anton);
+  font-size: 3rem;
+  color: var(--foreground);
+}
+
+.project-name {
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 50%,
+    var(--foreground) 50%
+  );
+  background-size: 200%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.2s linear;
+}
+.project-name::after {
+  content: 'open_in_new';
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.05s;
+}
+.project-item:hover .project-name {
+  background-position: 0 0;
+}
+.project-item:hover .project-name::after {
+  opacity: 1;
+}
+
+.project-num {
+  font-family: var(--font-anton);
+}
+.project-name {
+  font-family: var(--font-anton);
+  color: var(--foreground);
+  font-weight: normal;
+  font-size: 3.5rem;
+}
+.project-tech-list {
+  font-size: 0.75rem;
+}
+
 /* ===================== */
-/* Button            */
+/* Icons                 */
+/* ===================== */
+
+.about-title::before {
+  content: 'person_celebrate';
+}
+.stacks-title::before,
+.experience-title::before,
+.project-title::before {
+  content: 'asterisk';
+  animation: spin 10s linear infinite;
+}
+
+.after\:icon::after,
+.before\:icon::before {
+  text-transform: none;
+  font-family: 'Material Symbols Outlined';
+  font-size: 2rem;
+  line-height: 1;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* ===================== */
+/* Button                */
 /* ===================== */
 .button {
   margin-top: calc(var(--spacing) * 9);
@@ -143,6 +364,13 @@ p {
   background-color: white;
 }
 
+/* ===================== */
+/* Image                */
+/* ===================== */
+.project-item {
+  width: 100%;
+}
+
 @keyframes moveGradient {
   0% {
     background-position: 0% 50%;
@@ -155,8 +383,35 @@ p {
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 @media (min-width: 600px) {
   main h1 {
     font-size: 80px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressbar {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
   }
 }

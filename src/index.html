@@ -14,11 +14,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Flex:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=asterisk,open_in_new,person_celebrate,work" />
 </head>
 
 <body>
+    <div class="progressbar-content">
+        <div class="progressbar-bar"></div>
+    </div>
     <main>
-        <section class="hero">
+        <section class="hero-inline item">
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span>Fullstack</span>
@@ -47,7 +52,108 @@
                 </li>
             </ul>
         </section>
+
+        <section class="about-inline item">
+            <h2 class="about-title before:icon">Hi, I'm Kaoru.</h2>
+            <div class="about-content">
+                <p>
+                    I'm a full-stack developer passionate about building thoughtful digital experiences from
+                    frontend to backend. I enjoy creating clean, scalable, and accessible web applications while
+                    continuously exploring better ways to solve real-world problems.</p>
+                <p>
+                    I enjoy the entire development process—from understanding the problem and designing the
+                    architecture to polishing the user experience and optimizing performance. Combining creativity
+                    with technical thinking is what makes software development so rewarding to me.
+                </p>
+                <p>
+                    Every project is an opportunity to learn something new, push my limits, and create products that
+                    are useful, intuitive, and built to last.
+                </p>
+            </div>
+        </section>
+
+        <section class="stacks-inline">
+            <h2 class="stacks-title before:icon">My stack</h2>
+            <div class="stacks-content">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>Python</li>
+                </ul>
+                <h3>Backend</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Java</li>
+                </ul>
+                <h3>Database</h3>
+                <ul>
+                    <li>OracleSQL</li>
+                    <li>MongoDB</li>
+                </ul>
+                <h3>Tools</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>Subversion</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="experience-inline">
+            <h2 class="experience-title before:icon">
+                My experience
+            </h2>
+            <div class="experience-content">
+                <article class="experience-item">
+                    <h3 class="experience-company">Panasonic Information Systems</h3>
+                    <p class="experience-position">Software Developer</p>
+                    <p>Aug 2020 - Mar 2025</p>
+                </article>
+                <article class="experience-item">
+                    <h3 class="experience-company">Panasonic Information Systems</h3>
+                    <p class="experience-position">IT Service Desk Team Lead </p>
+                    <p>Apr 2025 - Dec 2025</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="project-inline">
+            <h2 class="project-title before:icon">
+                Selected Projects
+            </h2>
+            <div class="project-content">
+
+                <a href="#" class="project-item">
+                    <img src="images/project1.png" alt="Project 1">
+                    <div class="project-info">
+                        <div class="project-num">_01.</div>
+                        <div class="project-description">
+                            <h3 class="project-name after:icon">
+                                Portfolio
+                            </h3>
+                            <ul class="project-tech-list">
+                                <li>CSS</li>
+                                <li>HTML</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            </a>
+
+            </div>
+        </section>
+
+        <div id="dummy" style="height:100vh;"></div>
     </main>
+    <footer>
+        <p>Have a project in mind?</p>
+        <a class="footer-email" href="mailto:kaoru.kajihara.mail@gmail.com">kaoru.kajihara.mail@gmail.com</a>
+        <a href="https://github.com/Tajmirul/portfolio-2.0">Inspired by Tajmirul</a>
+        <p>&</p>
+        <a href="https://github.com/kazi983/"> built by Kaoru Kajihara</a>
+    </footer>
 </body>
 
 </html>
