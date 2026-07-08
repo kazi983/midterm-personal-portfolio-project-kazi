@@ -5,8 +5,8 @@
 :root {
   --background: rgb(33, 33, 33);
   --surface: rgb(60, 60, 60);
-  --foreground: rgb(222, 222, 222);
-  --muted-foreground: rgb(181, 181, 181);
+  --foreground: rgb(204, 214, 246);
+  --muted-foreground: #8892b0;
   --font-roboto-flex: 'Roboto Flex', 'Roboto Flex Fallback';
   --font-anton: 'Anton', 'Anton Fallback';
   --primary-color: rgb(100, 255, 218);
@@ -40,7 +40,7 @@
 }
 
 /* ===================== */
-/* Reset                 */
+/* Reset / Normalize     */
 /* ===================== */
 
 * {
@@ -87,6 +87,24 @@ li {
 }
 .text-primary {
   color: var(--foreground);
+}
+
+.hover\:f-foreground {
+  transition: color 0.2s ease;
+}
+.hover\:f-foreground:hover {
+  color: var(--foreground);
+}
+
+.hover\:bg-white {
+  transition: background-color 0.2s ease;
+}
+.hover\:bg-white:hover {
+  background-color: var(--foreground);
+}
+
+.highlighted-text {
+  color: var(--primary-color);
 }
 
 /* ===================== */
@@ -427,6 +445,23 @@ section {
   color: var(--foreground);
 }
 
+.experience-description li {
+  position: relative;
+  padding-left: var(--spacing-6);
+}
+.experience-description li::before {
+  content: '*';
+  position: absolute;
+  left: 0;
+  height: var(--text-md);
+  text-align: center;
+}
+.experience-description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
 /* ===================== */
 /* Project               */
 /* ===================== */
@@ -588,20 +623,6 @@ section {
 /* ===================== */
 /* Animation             */
 /* ===================== */
-
-.hover\:f-foreground {
-  transition: color 0.2s ease;
-}
-.hover\:f-foreground:hover {
-  color: var(--foreground);
-}
-
-.hover\:bg-white {
-  transition: background-color 0.2s ease;
-}
-.hover\:bg-white:hover {
-  background-color: var(--foreground);
-}
 
 @keyframes moveGradient {
   0% {
