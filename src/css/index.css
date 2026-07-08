@@ -48,16 +48,23 @@
   padding: 0;
   box-sizing: border-box;
   line-height: 1;
-  font-weight: normal;
 }
 body {
   font-family: var(--font-roboto-flex);
   line-height: 1.6;
-  background-color: var(--background);
+  /* background-color: var(--background); */
   color: var(--foreground);
   background: linear-gradient(120deg, #0643b5, #15151f, #8800ff);
   background-size: 300% 300%;
   animation: moveGradient 12s ease-in-out infinite;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
 }
 h1 {
   font-size: var(--text-6xl);
@@ -66,13 +73,12 @@ h1 {
 }
 h2 {
   font-size: var(--text-lg);
-  font-weight: inherit;
 }
 p {
   color: var(--muted-foreground);
 }
 a {
-  color: inherit;
+  color: var(--muted-foreground);
   text-decoration: none;
 }
 li {
@@ -88,26 +94,95 @@ li {
 /* ===================== */
 .nav {
   position: fixed;
-  width: 100%;
+  right: calc(2% + 0.5rem);
+  padding-top: var(--spacing-2);
+
   display: flex;
-  justify-content: end;
-  padding-inline: var(--spacing-4);
-  padding-top: var(--spacing-8);
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: flex-end;
+  /* gap: var(--gap-md); */
+
   opacity: 1;
   z-index: 999;
 }
-.nav-availability-status {
-  border-radius: 5px;
-  border: 0.5px solid var(--muted-foreground);
+
+.nav-status-container {
+  border-radius: 16px 0 0 0;
   padding: var(--spacing-3);
 
   display: flex;
   gap: var(--gap-sm);
 
-  background-color: #11264b;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(6, 6, 6, 0.392);
 }
-.nav-availability-available {
+.nav-status-available {
   color: var(--primary-color);
+}
+
+.nav-status-label {
+  transition: color 0.2s ease;
+}
+.nav-status-container:hover .nav-status-label {
+  color: black;
+}
+
+.nav-status-available {
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
+}
+.nav-status-container:hover .nav-status-available {
+  color: black;
+  text-decoration: underline;
+}
+
+.hidden-nav-links {
+  border-radius: 0 0 0 16px;
+  padding: var(--spacing-3);
+
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--gap-sm);
+
+  width: 100%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.095);
+}
+
+@media screen and (width > 600px) {
+  .hidden-nav-links {
+    display: flex;
+  }
+}
+
+/* ===================== */
+/* Progressbar           */
+/* ===================== */
+
+.progressbar-content {
+  position: fixed;
+  top: 50vh;
+  right: 2%;
+  width: 0.375rem;
+  height: 100px;
+  transform: translateY(-50%);
+  background-color: var(--surface);
+  border-radius: 0.375rem;
+  z-index: 9999;
+}
+.progressbar-bar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  animation: progressbar linear both;
+  animation-timeline: scroll();
+  animation-range: entry 0% cover 100%;
+  border-radius: 0.375rem;
 }
 
 /* ===================== */
@@ -123,6 +198,7 @@ footer {
   padding-bottom: var(--spacing-6);
 }
 .footer-email {
+  color: var(--foreground);
   font-family: var(--font-anton);
   font-size: clamp(var(--text-md), 7vw, var(--text-3xl));
   padding-top: var(--spacing-4);
@@ -435,35 +511,10 @@ section {
 }
 
 /* ===================== */
-/* Progressbar           */
-/* ===================== */
-
-.progressbar-content {
-  position: fixed;
-  top: 50vh;
-  right: 2%;
-  width: 0.375rem;
-  height: 100px;
-  transform: translateY(-50%);
-  background-color: var(--surface);
-  border-radius: 0.375rem;
-  z-index: 9999;
-}
-.progressbar-bar {
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary-color);
-  animation: progressbar linear both;
-  animation-timeline: scroll();
-  animation-range: entry 0% cover 100%;
-  border-radius: 0.375rem;
-}
-
-/* ===================== */
 /* Email                 */
 /* ===================== */
 
-.email-hidden {
+.hidden-email {
   display: none;
 
   position: fixed;
@@ -472,16 +523,12 @@ section {
 
   writing-mode: vertical-rl;
   padding-left: var(--spacing-4);
-  color: var(--muted-foreground);
 
   transition: color 0.1s ease-in;
 }
-.email-hidden:hover {
-  color: var(--foreground);
-}
 
 @media screen and (width > 1280px) {
-  .email-hidden {
+  .hidden-email {
     display: block;
   }
 }
@@ -536,16 +583,25 @@ section {
   font-family: var(--font-anton);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-
-  transition: background-color 0.2s ease;
-}
-.button:hover {
-  background-color: white;
 }
 
 /* ===================== */
 /* Animation             */
 /* ===================== */
+
+.hover\:f-foreground {
+  transition: color 0.2s ease;
+}
+.hover\:f-foreground:hover {
+  color: var(--foreground);
+}
+
+.hover\:bg-white {
+  transition: background-color 0.2s ease;
+}
+.hover\:bg-white:hover {
+  background-color: var(--foreground);
+}
 
 @keyframes moveGradient {
   0% {

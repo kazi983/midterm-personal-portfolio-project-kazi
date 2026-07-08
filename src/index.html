@@ -19,20 +19,31 @@
 </head>
 
 <body>
+
+    <nav class="nav">
+
+        <a class="nav-status-container hover:bg-white" href="download/Kaoru_Kajihara_Resume.docx.pdf" target="_blank"
+            rel="noopener noreferrer">
+            <p class="nav-status-label">Current Status:</p>
+            <p class="nav-status-available">Available</p>
+        </a>
+
+        <ul class="hidden-nav-links">
+            <a class="nav-link hover:f-foreground" href="#hero">Home</a>
+            <a class="nav-link hover:f-foreground" href="#about">About</a>
+            <a class="nav-link hover:f-foreground" href="#stack">Skills</a>
+            <a class="nav-link hover:f-foreground" href="#experience">Work Experience</a>
+            <a class="nav-link hover:f-foreground" href="#project">Project</a>
+            <a class="nav-link hover:f-foreground" href="#contact">Contact</a>
+        </ul>
+    </nav>
+
     <div class="progressbar-content">
         <div class="progressbar-bar"></div>
     </div>
 
-    <nav class="nav">
-        <a class="nav-availability-status" href="download/Kaoru_Kajihara_Resume.docx.pdf" target="_blank"
-            rel="noopener noreferrer">
-            <p>Current Status:</p>
-            <p class="nav-availability-available">Available</p>
-        </a>
-    </nav>
-
     <main>
-        <section class="section-flex hero-section">
+        <section id="hero" class="section-flex hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span>Fullstack</span>
@@ -44,7 +55,7 @@
                     always wanna make products
                     the best and most efficient.
                 </p>
-                <a class="button" href="https://www.linkedin.com/in/kaoru-kajihara/" target="_blank"
+                <a class="button hover:bg-white" href="https://www.linkedin.com/in/kaoru-kajihara/" target="_blank"
                     rel="noopener noreferrer">Let's
                     talk
                 </a>
@@ -62,7 +73,7 @@
             </ul>
         </section>
 
-        <section class="section-flex about-section">
+        <section id="about" class="section-flex about-section">
             <h2 class="section-title about-title before:icon icon-person">
                 This is who I am.
             </h2>
@@ -88,7 +99,7 @@
             </div>
         </section>
 
-        <section class="section-flex stack-section">
+        <section id="stack" class="section-flex stack-section">
             <h2 class="section-title stack-title before:icon icon-asterisk">My stack</h2>
             <div class="stack-content">
                 <h3 class="stack-name">Frontend</h3>
@@ -155,7 +166,7 @@
         </section>
 
 
-        <section class="section-flex experience-section">
+        <section id="experience" class="section-flex experience-section">
             <h2 class="section-title experience-title before:icon icon-asterisk">
                 My experience
             </h2>
@@ -173,7 +184,7 @@
             </div>
         </section>
 
-        <section class="section-flex project-section">
+        <section id="project" class="section-flex project-section">
             <h2 class="section-title project-title before:icon icon-asterisk">
                 Selected Projects
             </h2>
@@ -216,15 +227,19 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="contact">
         <p>Have a project in mind?</p>
-        <a class="footer-email" href="mailto:kaoru.kajihara.mail@gmail.com">kaoru.kajihara.mail@gmail.com</a>
-        <a href="https://github.com/Tajmirul/portfolio-2.0">Inspired by Tajmirul</a>
+        <a class="footer-email" href="mailto:kaoru.kajihara.mail@gmail.com" target="_blank"
+            rel="noopener noreferrer">kaoru.kajihara.mail@gmail.com</a>
+        <a class="hover:f-foreground" href="https://github.com/Tajmirul/portfolio-2.0" target="_blank"
+            rel="noopener noreferrer">Inspired by Tajmirul</a>
         <p>&</p>
-        <a href="https://github.com/kazi983/"> built by Kaoru Kajihara</a>
+        <a class="hover:f-foreground" href="https://github.com/kazi983/" target="_blank" rel="noopener noreferrer">
+            built by Kaoru Kajihara</a>
     </footer>
 
-    <a class="email-hidden" href="mailto:kaoru.kajihara.mail@gmail.com">kaoru.kajihara.mail@gmail.com</a>
+    <a class="hidden-email hover:f-foreground" href="mailto:kaoru.kajihara.mail@gmail.com" target="_blank"
+        rel="noopener noreferrer">kaoru.kajihara.mail@gmail.com</a>
 </body>
 
 </html>
