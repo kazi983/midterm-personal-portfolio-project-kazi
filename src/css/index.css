@@ -6,11 +6,13 @@
   --background: rgb(33, 33, 33);
   --surface: rgb(60, 60, 60);
   --foreground: rgb(204, 214, 246);
-  --font-family-base: 'Source Sans 3', 'Roboto Flex', 'Roboto Flex Fallback';
   --muted-foreground: #8892b0;
-  --font-anton: 'Anton', 'Anton Fallback';
   --primary-color: rgb(100, 255, 218);
   --primary-foreground: rgb(33, 33, 33);
+
+  --font-family-base: 'Source Sans 3', 'Roboto Flex', 'Roboto Flex Fallback';
+  --font-anton: 'Anton', 'Anton Fallback';
+  --font-mono: 'Roboto Mono', monospace;
 
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -296,6 +298,8 @@ section {
 .hero-availability {
   margin-top: var(--spacing-3);
   line-height: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
 }
 
 .hero-stats {
@@ -445,6 +449,12 @@ section {
   color: var(--foreground);
 }
 
+.experience-company,
+.experience-period {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
 .experience-description li {
   position: relative;
   padding-left: var(--spacing-6);
@@ -534,6 +544,7 @@ section {
 .project-tech-list {
   display: flex;
   align-items: center;
+  font-family: var(--font-mono);
 }
 .project-tech-list li:not(:last-child)::after {
   content: '';
