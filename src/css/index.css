@@ -105,7 +105,7 @@ li {
   background-color: var(--foreground);
 }
 
-.highlighted-text {
+.accent-text {
   color: var(--primary-color);
 }
 
