@@ -1,6 +1,6 @@
 # Mid Term - Personal Portfolio Website
 
-**Live Deployment Link:** [[Link](https://103midterm-kazi-portfolo.netlify.app/src/)]
+**Live Deployment Link:** [[Link](https://103midterm-kazi-portfolo.netlify.app/)]
 
 ## Goal
 
