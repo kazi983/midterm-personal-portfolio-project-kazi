@@ -57,7 +57,6 @@ html {
 body {
   font-family: var(--font-family-base);
   line-height: 1.6;
-  /* background-color: var(--background); */
   color: var(--foreground);
   background: linear-gradient(120deg, #0643b5, #15151f, #8800ff);
   background-size: 300% 300%;
@@ -383,7 +382,6 @@ section {
   margin: 0 auto;
   border-radius: 4px;
   background-color: var(--primary-color);
-  transition: filter 0.25s ease;
   overflow: hidden;
 }
 .about-photo::before {
